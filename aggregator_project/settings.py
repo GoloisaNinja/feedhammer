@@ -28,9 +28,33 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
+# PRODUCTION HOST ISH
+# Tell Django it's behind a secure reverse proxy (Railway)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Trust HTTPS origins from Railway
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+]
+
 #ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv(), default='127.0.0.1,localhost')
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
+#ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
+
+# Set fallback default hosts, then merge with environment variable if present
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '[::1]',
+    '.railway.app',  # Matches all railway subdomains directly
+]
+
+# Read ALLOWED_HOSTS env var (handles both space and comma separation)
+env_hosts = os.environ.get('ALLOWED_HOSTS')
+if env_hosts:
+    # Clean up whitespace/quotes and split by comma or space
+    hosts_list = [h.strip(' "\'').lstrip('https://').lstrip('http://') for h in env_hosts.replace(',', ' ').split()]
+    ALLOWED_HOSTS.extend(hosts_list)
 
 
 # Application definition
