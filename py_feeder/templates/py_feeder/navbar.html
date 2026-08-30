@@ -1,0 +1,27 @@
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">FeedHammer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+              <form id="refresh-form" action="{% url 'refresh_feeds' %}" method="POST" style="display: none;">
+                {% csrf_token %}
+                </form>
+          <a class="nav-link active" aria-current="page" href="#" onclick="event.preventDefault(); document.getElementById('refresh-form').submit();">Refresh</a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="/feeds">Feeds</a>
+          </li>
+      </ul>
+        <!-- MAYBE LET THEM ADD THEIR OWN FEEDS CAUSE ALL LIFE ISN'T WARHAMMER...OR IS IT...
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Add RSS Feed" aria-label="Add Feed">
+        <button class="btn btn-outline-success" type="submit">Add</button>
+      </form>
+      -->
+    </div>
+  </div>
+</nav>

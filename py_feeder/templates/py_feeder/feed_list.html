@@ -1,0 +1,33 @@
+
+{% extends 'py_feeder/base.html'%}
+{% load static %}
+{% block extra_css %}
+     <link rel="stylesheet" href="{% static 'feeds.css' %}">
+{% endblock %}
+{% block title %}FeedHammer - Warhammer RSS Feeds{% endblock %}
+   {% block content %}
+       <!-- NEED ME A TOKEN -->
+       <meta name="csrf-token" content="{{ csrf_token }}">
+       <div class="container-fluid hero">
+       <h1>Add Warhammer Feeds</h1>
+       <p>select from curated warhammer feeds to build your lore base</p>
+       </div>
+       <div class="container-fluid">
+       <ul class="list-group">
+           {% for item in subscribed_status %}
+               <li class="list-group-item list-group-item-dark"
+                   data-url="{{ item.url }}"
+                   data-toggle-endpoint="{% url 'toggle_feed' %}">{{ item.title }}<span style="float: right;">
+                   {% if item.subscribed %}
+                       <button class="btn btn-danger" onclick="toggleFeed(this, 'remove')">-</button>
+                       {% else %}
+                       <button class="btn btn-secondary" onclick="toggleFeed(this, 'add')">+</button>
+                   {% endif %}
+               </span></li>
+           {% endfor %}
+       </ul>
+       </div>
+   {% endblock %}
+{% block javascript %}
+    <script src="{% static 'js/feed_list.js' %}"></script>
+{% endblock %}

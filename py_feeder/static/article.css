@@ -1,0 +1,31 @@
+.card-title {
+        font-size: 30px;
+        color: var(--py-material_green);
+    }
+.card {
+        background-color: transparent;
+        border: .5px solid var(--py-article_bg);
+        /*background-color: var(--py-material_blue);*/
+        box-shadow: 4px 0 1px var(--py-article_bg);
+    }
+.card-title {
+        text-decoration: none;
+            font-family: "Major Mono Display", serif;
+        font-weight: 400;
+    }
+.card-footer {
+        /*background-color: var(--py-article_footer);*/
+        background-color: var(--py-material_blue_steel);
+    }
+.meta {
+        color: var(--py-material_purple) !important;
+        border-top: 3px solid var(--py-material_green);
+    }
+.text-muted {
+        color: var(--py-material_orange) !important;
+        font-size: 12px;
+    }
+.article-text {
+        color: var(--py-article_text);
+        font-size: 12px;
+    }

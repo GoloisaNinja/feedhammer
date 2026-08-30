@@ -1,0 +1,10 @@
+
+.list-group-item {
+    background-color: var(--bs-dark);
+    color: var(--py-article_text);
+    transition: all .5s ease-in-out;
+    border: .5px solid var(--py-article_bg);
+}
+.list-group-item:hover {
+    background-color: var(--py-material_blue_steel);
+}

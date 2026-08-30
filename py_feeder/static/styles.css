@@ -1,0 +1,40 @@
+:root {
+    --py-material_green: #06b3bf;
+    --py-material_orange: #fcaa58;
+    --py-material_purple: #d358fc;
+    --py-material_blue: #2d2e70;
+    --py-material_blue_steel: #444480;
+    --py-article_text: #cccccc;
+    --py-article_shadow: #1a1a1a;
+    --py-article_bg: #403f40;
+    --py-article_footer: #4a4a4a;
+}
+* {
+    font-family: "Major Mono Display", monospace !important;
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+    }
+h1 {
+    color: var(--py-material_green);
+    font-size: 40px;
+}
+p {
+    color: var(--py-article_text);
+}
+body {
+        background-color: var(--bs-dark);
+    }
+.hero {
+    margin: 35px 0;
+}
+/* NAVBAR */
+.navbar-brand {
+        font-size: 30px;
+        color: var(--py-material_green);
+    }
+.form-control.me-2 {
+        background-color: var(--bg-dark);
+        color: var(--py-article_text);
+    }
