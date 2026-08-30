@@ -5,6 +5,7 @@ Django==6.1
 django-bootstrap5==26.3
 feedparser==6.0.14
 feedparser-sgmllib==2.1.0
+gunicorn==26.2.0
 python-decouple==3.8
 pytz==2026.3.post1
 setuptools==84.0.0
