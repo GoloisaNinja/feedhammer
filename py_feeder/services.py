@@ -20,6 +20,11 @@ def sync_all_feeds():
 
         if parsed_feed.bozo or not parsed_feed.entries:
             continue
+        # NEED A TITLE FIX FOR THE FEED WHEN FEEDS GET DUMPED OR RE-ADDED
+        extracted_title = parsed_feed.feed.get('title')
+        if extracted_title and (not feed.title or feed.title.strip() == ''):
+            feed.title = extracted_title
+            feed.save(update_fields=['title'])
 
         for entry in parsed_feed.entries:
             link = getattr(entry, 'link', None) or getattr(entry, 'id', None)
