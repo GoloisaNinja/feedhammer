@@ -6,7 +6,6 @@ footer {
 .logo {
     color: var(--py-material_green);
     font-size: 18px;
-    margin: 0;
 }
 .link {
     color: var(--py-article_text);
