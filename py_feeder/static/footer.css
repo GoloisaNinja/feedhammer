@@ -1,0 +1,15 @@
+footer {
+    max-height: 70px;
+    background-color: var(--py-article_shadow);
+    padding: 0;
+}
+.logo {
+    color: var(--py-material_green);
+    font-size: 18px;
+    margin: 0;
+}
+.link {
+    color: var(--py-article_text);
+    cursor: pointer;
+    font-size: 18px;
+}

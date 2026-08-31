@@ -23,9 +23,10 @@ h1 {
 p {
     color: var(--py-article_text);
 }
-body {
-        background-color: var(--bs-dark);
-    }
+
+main.mypd-5 {
+    padding-top: 5rem;
+}
 .hero {
     margin: 35px 0;
 }
@@ -35,6 +36,18 @@ body {
         color: var(--py-material_green);
     }
 .form-control.me-2 {
-        background-color: var(--bg-dark);
         color: var(--py-article_text);
     }
+.green-span {
+    color: var(--py-material_green);
+}
+.white-span {
+    color: var(--py-article_text);
+}
+.purple-span {
+    color: var(--py-material_purple);
+}
+div .empty-txt {
+        text-align: left;
+        color: var(--py-material_orange);
+}

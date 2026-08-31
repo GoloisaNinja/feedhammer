@@ -14,15 +14,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
-<body>
-   {% include 'py_feeder/navbar.html' %}
-   <main>
+<body class="d-flex flex-column min-vh-100 bg-dark">
+<header>
+    {% include 'py_feeder/navbar.html' %}
+</header>
+   <main class="flex-shrink-0 mb-4 mypd-5">
        {% block content %}
        {% endblock %}
    </main>
-
+    {% include 'py_feeder/footer.html' %}
 </body>
 {% block javascript %}
 {% endblock %}
