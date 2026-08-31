@@ -20,7 +20,7 @@ def feeds_check(view_request):
             self.url = url
 
     xml_feeds = [
-        External_Feed("Goonhammer", "https://goonhammer.com/feed"),
+        External_Feed("TableTop Battles", "https://goonhammer.com/feed"),
         External_Feed("CaShock 40k Blog", "https://cadianshock.com/feed/"),
         External_Feed("Awesome Lies", "https://awesomeliesblog.wordpress.com/feed/"),
         External_Feed("Bell of Lost Souls", "https://www.belloflostsouls.net/category/warhammer-40k/feed/"),
@@ -50,9 +50,11 @@ def toggle_feed(toggle_request):
         return JsonResponse({'success': False, 'error': 'No URL provided'}, status=400)
     if action == 'add':
         Feed.objects.get_or_create(url=url)
+        sync_all_feeds()
         return JsonResponse({'success': True, 'action': 'added'}) # SEND ADDED BACK
     elif action == 'remove':
         Feed.objects.filter(url=url).delete()
+        sync_all_feeds()
         return JsonResponse({'success': True, 'action': 'removed'}) # SEND REMOVE BACK
     return JsonResponse({'success': False, 'error': 'Invalid action'}, status=400)
 
