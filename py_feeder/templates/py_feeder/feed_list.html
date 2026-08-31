@@ -2,7 +2,7 @@
 {% extends 'py_feeder/base.html'%}
 {% load static %}
 {% block extra_css %}
-     <link rel="stylesheet" href="{% static 'feeds.css' %}">
+     <link rel="stylesheet" href="{% static 'py_feeder/feeds.css' %}">
 {% endblock %}
 {% block title %}FeedHammer - Warhammer RSS Feeds{% endblock %}
    {% block content %}
@@ -29,5 +29,5 @@
        </div>
    {% endblock %}
 {% block javascript %}
-    <script src="{% static 'js/feed_list.js' %}"></script>
+    <script src="{% static 'py_feeder/js/feed_list.js' %}"></script>
 {% endblock %}

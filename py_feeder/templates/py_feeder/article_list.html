@@ -2,7 +2,7 @@
 {% extends 'py_feeder/base.html'%}
 {% load static %}
 {% block extra_css %}
-     <link rel="stylesheet" href="{% static 'article.css' %}">
+     <link rel="stylesheet" href="{% static 'py_feeder/article.css' %}">
 {% endblock %}
    {% block content %}
        <div class="container-fluid hero">
@@ -33,7 +33,7 @@
         <p class="m-0 p-0 empty-txt">bask in the danger of Information.</p>
         <p class="m-0 p-0 empty-txt"><span class="purple-span">And remember,</span> everything is canon, <span class="white-span">not everything is true...</span></p>
             <div class="container-fluid">
-                <img class="d-block mx-auto img-fluid" src="{% static 'images/sm.png' %}" alt="Depressed Space Marine" />
+                <img class="d-block mx-auto img-fluid" src="{% static 'py_feeder/images/sm.png' %}" alt="Depressed Space Marine" />
             </div>
     {% endfor %}
      </div>

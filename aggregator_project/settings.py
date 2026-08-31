@@ -114,11 +114,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Tells Django where to look for source static files in your repo
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-
 # Django 5.1 Storage Configuration with WhiteNoise
 STORAGES = {
     "default": {
